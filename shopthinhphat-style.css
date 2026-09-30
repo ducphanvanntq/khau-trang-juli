@@ -1,0 +1,97 @@
+/* Style trích từ https://shopthinhphat.com (Flatsome + child theme "ban-hang")
+   Chỉ gồm design tokens + các component chính, viết lại gọn để tái sử dụng. */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+:root {
+  /* Màu chính */
+  --color-brand: #326e51;        /* xanh lá đậm: header-bottom, nút, tiêu đề SP, viền */
+  --color-bg-soft: #f5fbf6;      /* nền section xanh nhạt */
+  --color-sale: #ff235c;         /* giá khuyến mãi + badge giảm giá */
+  --color-accent-orange: #ff9f1b;/* nút "Xem thêm" */
+  --color-deal: #ff6600;         /* chữ tiêu đề DEAL HOT */
+  --color-deal-border: #fba262;
+  --color-pink: #ff6699;         /* tiêu đề nhóm danh mục */
+  --color-text: #303030;
+  --color-heading: #0a0a0a;
+  --color-muted: #494949;
+  --color-border: #ececec;
+  --color-border-2: #e3e3e3;
+  --color-white: #fff;
+
+  /* Chữ */
+  --font-base: 'Roboto', sans-serif;
+  --fs-xs: 12px;
+  --fs-sm: 13px;
+  --fs-base: 14px;
+  --fs-md: 15px;
+  --fs-lg: 16px;
+  --fs-price: 18px;
+  --fs-title: 20px;
+
+  /* Khác */
+  --radius: 4px;
+  --container: 1310px;
+  --header-main-h: 70px;
+  --header-bottom-h: 40px;
+}
+
+body { font-family: var(--font-base); font-size: var(--fs-base); color: var(--color-text); }
+h1, h2, h3, h4, h5, h6 { font-weight: 700; color: var(--color-heading); }
+.container { max-width: var(--container); margin: 0 auto; padding: 0 15px; }
+.section-soft { background: var(--color-bg-soft); padding: 10px 0; }
+
+/* Header: logo | ô tìm kiếm viền xanh | tài khoản, giỏ hàng — bên dưới là thanh menu xanh */
+.header-main { height: var(--header-main-h); background: #fff; display: flex; align-items: center; }
+.header-bottom { min-height: var(--header-bottom-h); background: var(--color-brand); color: #fff; }
+.search-form { width: 46%; display: flex; border: 2px solid var(--color-brand); border-radius: var(--radius); }
+.search-form input { flex: 1; border: 0; padding: 0 12px; }
+.search-form button { width: 71px; background: var(--color-brand); color: #fff; border: 0; }
+.header-link span { font-size: var(--fs-md); color: var(--color-brand); }
+
+/* Tiêu đề khối sản phẩm: viền trên 3px màu, tab bên phải */
+.block-title {
+  display: flex; align-items: center; height: 44px; background: #fff;
+  border-top: 3px solid var(--block-color, var(--color-pink));
+  border-bottom: 1px solid var(--color-border);
+}
+.block-title h2 { margin: 0; padding-left: 15px; font-size: var(--fs-lg); text-transform: uppercase; color: var(--block-color, var(--color-pink)); }
+.block-title .tabs { margin-left: auto; padding-right: 15px; display: flex; gap: 15px; }
+.block-title .tabs a { font-size: var(--fs-base); color: var(--color-muted); text-decoration: none; }
+.block-title .tabs a:hover { color: var(--color-brand); }
+.btn-more {
+  padding: 4px 8px; border-radius: var(--radius); font-size: var(--fs-base);
+  background: var(--color-accent-orange); color: #fff; text-decoration: none;
+}
+
+/* Thẻ sản phẩm */
+.product-grid { display: grid; grid-template-columns: repeat(6, 1fr); background: #fff; }
+.product-card { position: relative; background: #fff; border-right: 1px solid var(--color-border); }
+.product-card .badge {
+  position: absolute; top: 10px; left: 10px; padding: 4px 5px; border-radius: var(--radius);
+  background: var(--color-sale); color: #fff; font-size: var(--fs-sm);
+}
+.product-card .info { padding: 10px 10px 20px; }
+.product-card .category { font-size: var(--fs-xs); color: #000; }
+.product-card .title { margin: 5px 0 9px; font-size: var(--fs-sm); line-height: 20px; color: var(--color-brand); }
+.product-card .price del { font-size: var(--fs-base); color: #000; }
+.product-card .price ins { font-size: var(--fs-price); font-weight: 500; color: var(--color-sale); text-decoration: none; }
+
+/* Nút chính (Thêm vào giỏ / Đặt hàng) */
+.btn-primary {
+  background: var(--color-brand); color: #fff; border: 0; border-radius: var(--radius);
+  font-size: var(--fs-lg); padding: 8px 26px; cursor: pointer;
+}
+
+/* Widget sidebar */
+.widget { border: 1px solid var(--color-border-2); border-top: 3px solid var(--color-brand); }
+
+/* Footer */
+.footer { border-top: 3px solid var(--color-brand); }
+.footer h4 { text-transform: uppercase; font-size: var(--fs-md); }
+.footer-bottom { font-size: var(--fs-xs); background: #fcfcfc; border-top: 1px solid #eee; color: #989898; }
+
+@media (max-width: 849px) {
+  .product-grid { grid-template-columns: repeat(2, 1fr); }
+  .search-form { width: 100%; }
+}

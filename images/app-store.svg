@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" width="200" height="60">
+<path d="M33 22c-3 0-5 2-7 2s-4-2-7-2c-5 0-9 4-9 11 0 8 5 17 9 17 2 0 3-1 6-1s4 1 6 1c3 0 6-5 8-10-3-1-5-4-5-8 0-3 2-6 4-7-1-2-3-3-5-3zM31 12c-3 0-6 3-6 7 3 0 6-3 6-7z" fill="#8a8a8a"/>
+<text x="52" y="42" font-family="Roboto,Arial,sans-serif" font-size="24" fill="#8a8a8a">App Store</text>
+</svg>

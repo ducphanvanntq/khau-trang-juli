@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" width="200" height="60">
+<path d="M12 12 L32 32 L12 52 Z" fill="#00a0ff"/><path d="M12 12 L40 27 L32 32 Z" fill="#00d95f"/>
+<path d="M12 52 L32 32 L40 37 Z" fill="#ff3a44"/><path d="M32 32 L40 27 L48 32 L40 37 Z" fill="#ffc400"/>
+<text x="56" y="41" font-family="Roboto,Arial,sans-serif" font-size="22" fill="#8a8a8a">Google play</text>
+</svg>
