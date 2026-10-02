@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
-<rect width="500" height="500" fill="#f1f5fb"/>
+<rect width="500" height="500" fill="#ffffff"/>
 <g transform="translate(0 -30)"><path d="M122 215 C62 212 62 308 122 305 M378 215 C438 212 438 308 378 305" fill="none" stroke="#8aa0bd" stroke-width="6" stroke-linecap="round"/><path d="M112 255 Q140 185 250 178 Q360 185 388 255 Q360 332 250 342 Q140 332 112 255 Z" fill="#ffffff" stroke="#8aa0bd" stroke-width="3"/><path d="M250 178 L250 342" stroke="#8aa0bd" stroke-opacity=".5" stroke-width="2"/><text x="320" y="300" text-anchor="middle" font-family="Roboto,Arial,sans-serif" font-size="15" font-weight="700" fill="#8aa0bd" fill-opacity=".7" letter-spacing="2">JULI</text></g>
-<text x="250" y="410" text-anchor="middle" font-family="Roboto,Arial,sans-serif" font-size="30" font-weight="700" fill="#326e51">5D PREMIUM</text>
-<text x="250" y="445" text-anchor="middle" font-family="Roboto,Arial,sans-serif" font-size="20" fill="#666">Hộp 10 cái</text>
+<text x="250" y="410" text-anchor="middle" font-family="Roboto,Arial,sans-serif" font-size="30" font-weight="700" fill="#0b5cad">5D PREMIUM</text>
+<text x="250" y="445" text-anchor="middle" font-family="Roboto,Arial,sans-serif" font-size="20" fill="#6b7280">Hộp 10 cái</text>
 </svg>

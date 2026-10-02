@@ -69,6 +69,34 @@
     });
   }
 
+  // Đồng hồ Flash sale: kết thúc ở mốc giờ kế tiếp (12h, 18h, 24h)
+  var timer = document.querySelector('[data-countdown]');
+  if (timer) {
+    var SLOTS = [12, 18, 24];
+    var hEl = timer.querySelector('[data-h]');
+    var mEl = timer.querySelector('[data-m]');
+    var sEl = timer.querySelector('[data-s]');
+    var pad = function (n) { return (n < 10 ? '0' : '') + n; };
+    var nextEnd = function () {
+      var now = new Date();
+      for (var i = 0; i < SLOTS.length; i++) {
+        var end = new Date(now);
+        end.setHours(SLOTS[i], 0, 0, 0);
+        if (end > now) return end;
+      }
+    };
+    var end = nextEnd();
+    var tick = function () {
+      var left = Math.floor((end - new Date()) / 1000);
+      if (left <= 0) { end = nextEnd(); left = Math.floor((end - new Date()) / 1000); }
+      hEl.textContent = pad(Math.floor(left / 3600));
+      mEl.textContent = pad(Math.floor(left % 3600 / 60));
+      sEl.textContent = pad(left % 60);
+    };
+    tick();
+    setInterval(tick, 1000);
+  }
+
   // Nút chia sẻ: gắn URL trang hiện tại
   var pageUrl = encodeURIComponent(location.href);
   var pageTitle = encodeURIComponent(document.title);

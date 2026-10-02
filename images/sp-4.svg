@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
-<rect width="500" height="500" fill="#fff6ec"/>
-<g transform="translate(0 -30)"><path d="M130 225 C140 120 360 120 370 225 M122 290 C80 330 420 330 378 290" fill="none" stroke="#326e51" stroke-width="6"/><ellipse cx="250" cy="262" rx="135" ry="92" fill="#f4f4f4" stroke="#9a8f84" stroke-width="3"/><circle cx="300" cy="285" r="28" fill="#326e51"/><circle cx="300" cy="285" r="16" fill="none" stroke="#fff" stroke-width="3"/><text x="200" y="250" text-anchor="middle" font-family="Roboto,Arial,sans-serif" font-size="16" font-weight="700" fill="#9a8f84" letter-spacing="2">JULI</text></g>
-<text x="250" y="410" text-anchor="middle" font-family="Roboto,Arial,sans-serif" font-size="30" font-weight="700" fill="#326e51">N95</text>
-<text x="250" y="445" text-anchor="middle" font-family="Roboto,Arial,sans-serif" font-size="20" fill="#666">Có van thở</text>
+<rect width="500" height="500" fill="#ffffff"/>
+<g transform="translate(0 -30)"><path d="M130 225 C140 120 360 120 370 225 M122 290 C80 330 420 330 378 290" fill="none" stroke="#0b5cad" stroke-width="6"/><ellipse cx="250" cy="262" rx="135" ry="92" fill="#f4f4f4" stroke="#9a8f84" stroke-width="3"/><circle cx="300" cy="285" r="28" fill="#0b5cad"/><circle cx="300" cy="285" r="16" fill="none" stroke="#fff" stroke-width="3"/><text x="200" y="250" text-anchor="middle" font-family="Roboto,Arial,sans-serif" font-size="16" font-weight="700" fill="#9a8f84" letter-spacing="2">JULI</text></g>
+<text x="250" y="410" text-anchor="middle" font-family="Roboto,Arial,sans-serif" font-size="30" font-weight="700" fill="#0b5cad">N95</text>
+<text x="250" y="445" text-anchor="middle" font-family="Roboto,Arial,sans-serif" font-size="20" fill="#6b7280">Có van thở</text>
 </svg>
