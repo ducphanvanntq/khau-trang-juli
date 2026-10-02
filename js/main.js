@@ -15,7 +15,7 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
-  // Popup đăng nhập & menu mobile
+  // Menu mobile
   function closeAll() {
     document.querySelectorAll('.overlay.open').forEach(function (el) {
       el.classList.remove('open');
@@ -48,8 +48,8 @@
     if (e.key === 'Escape') closeAll();
   });
 
-  // Bản demo: chặn submit form
-  document.querySelectorAll('form').forEach(function (f) {
+  // Bản demo: chặn submit form (trừ ô tìm kiếm, xử lý riêng bên dưới)
+  document.querySelectorAll('form:not([data-search])').forEach(function (f) {
     f.addEventListener('submit', function (e) { e.preventDefault(); });
   });
 
@@ -69,32 +69,62 @@
     });
   }
 
-  // Đồng hồ Flash sale: kết thúc ở mốc giờ kế tiếp (12h, 18h, 24h)
+  // Đồng hồ "Ưu đãi tháng này": đếm ngược đến hết tháng
   var timer = document.querySelector('[data-countdown]');
   if (timer) {
-    var SLOTS = [12, 18, 24];
-    var hEl = timer.querySelector('[data-h]');
-    var mEl = timer.querySelector('[data-m]');
-    var sEl = timer.querySelector('[data-s]');
     var pad = function (n) { return (n < 10 ? '0' : '') + n; };
-    var nextEnd = function () {
-      var now = new Date();
-      for (var i = 0; i < SLOTS.length; i++) {
-        var end = new Date(now);
-        end.setHours(SLOTS[i], 0, 0, 0);
-        if (end > now) return end;
-      }
-    };
-    var end = nextEnd();
+    var el = function (k) { return timer.querySelector('[data-' + k + ']'); };
+    var now0 = new Date();
+    var end = new Date(now0.getFullYear(), now0.getMonth() + 1, 1);
     var tick = function () {
-      var left = Math.floor((end - new Date()) / 1000);
-      if (left <= 0) { end = nextEnd(); left = Math.floor((end - new Date()) / 1000); }
-      hEl.textContent = pad(Math.floor(left / 3600));
-      mEl.textContent = pad(Math.floor(left % 3600 / 60));
-      sEl.textContent = pad(left % 60);
+      var left = Math.max(0, Math.floor((end - new Date()) / 1000));
+      el('d').textContent = pad(Math.floor(left / 86400));
+      el('h').textContent = pad(Math.floor(left % 86400 / 3600));
+      el('m').textContent = pad(Math.floor(left % 3600 / 60));
+      el('s').textContent = pad(left % 60);
     };
     tick();
     setInterval(tick, 1000);
+  }
+
+  // Tìm kiếm trong 5 sản phẩm (không phân biệt dấu, hoa thường)
+  var norm = function (str) {
+    return str.toLowerCase().normalize('NFD').replace(/\p{M}/gu, '').replace(/đ/g, 'd').trim();
+  };
+  var cards = document.querySelectorAll('.p-card');
+  var empty = document.getElementById('search-empty');
+
+  function runSearch(q) {
+    var words = norm(q).split(/\s+/).filter(Boolean);
+    if (!words.length || !cards.length) return;
+    var first = null;
+    cards.forEach(function (c) {
+      var text = norm(c.getAttribute('data-name') || '');
+      var hit = words.every(function (w) { return text.indexOf(w) !== -1; });
+      c.classList.toggle('is-found', hit);
+      if (hit && !first) first = c;
+    });
+    if (empty) empty.hidden = !!first;
+    (first || document.getElementById('san-pham')).scrollIntoView({ behavior: 'smooth', block: 'center' });
+    setTimeout(function () {
+      cards.forEach(function (c) { c.classList.remove('is-found'); });
+    }, 4000);
+  }
+
+  document.querySelectorAll('form[data-search]').forEach(function (f) {
+    f.addEventListener('submit', function (e) {
+      var q = f.querySelector('input').value;
+      if (!cards.length) return;          // trang khác: để form chuyển về index.html?q=...
+      e.preventDefault();
+      closeAll();
+      runSearch(q);
+    });
+  });
+
+  var q0 = new URLSearchParams(location.search).get('q');
+  if (q0) {
+    document.querySelectorAll('form[data-search] input').forEach(function (i) { i.value = q0; });
+    setTimeout(function () { runSearch(q0); }, 300);
   }
 
   // Nút chia sẻ: gắn URL trang hiện tại
