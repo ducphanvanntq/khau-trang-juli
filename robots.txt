@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://khau-trang-juli-duc-khoi.pages.dev/sitemap.xml

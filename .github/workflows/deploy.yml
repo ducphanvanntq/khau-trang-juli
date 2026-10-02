@@ -36,7 +36,7 @@ jobs:
       - name: Gom file website vào thư mục dist
         run: |
           mkdir dist
-          cp -r *.html css js images assets dist/
+          cp -r *.html css js images assets robots.txt sitemap.xml _headers dist/
 
       - name: Deploy
         env:

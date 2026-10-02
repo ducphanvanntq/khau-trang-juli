@@ -852,7 +852,12 @@ section[id] { scroll-margin-top: 50px; }
 .entry-content ul,
 .entry-content ol,
 .entry-content blockquote { margin: 0 0 1.3em; }
+.entry-content h1 { margin-bottom: .6em; font-size: 1.75em; line-height: 1.3; }
 .entry-content h2 { margin-bottom: .5em; font-size: 1.6em; line-height: 1.3; }
+.not-found { padding: 40px 0; text-align: center; }
+.not-found-btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.not-found .btn { text-decoration: none; }
+.not-found .btn-primary { color: #fff; }
 .entry-content h3 { margin-bottom: .5em; font-size: 1.25em; line-height: 1.3; }
 .entry-content ul { list-style: disc; }
 .entry-content ol { list-style: decimal; padding: 0; }
@@ -1215,6 +1220,7 @@ section[id] { scroll-margin-top: 50px; }
   .footer-section .sub-col:nth-child(odd) { padding-left: 0; }
   .footer-section .sub-col:last-child { margin-top: 10px; }
   .contact-form input { width: 100%; }
+  .entry-content h1 { font-size: 1.45em; }
   .entry-content h2 { font-size: 1.35em; }
   .entry-content blockquote.notice { font-size: 1.05em; padding-left: 1em; }
 }

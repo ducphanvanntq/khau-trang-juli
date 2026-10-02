@@ -1,0 +1,4 @@
+# Cloudflare Pages: không cho công cụ tìm kiếm index các bản preview
+# (mỗi lần deploy nhánh / pull request có URL riêng dạng <ma>.khau-trang-juli-duc-khoi.pages.dev)
+https://:version.:project.pages.dev/*
+  X-Robots-Tag: noindex
