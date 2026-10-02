@@ -19,7 +19,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  PROJECT_NAME: khau-trang-juli
+  PROJECT_NAME: khau-trang-juli-duc-cuong
   CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
   CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
 
@@ -37,12 +37,6 @@ jobs:
         run: |
           mkdir dist
           cp -r *.html css js images dist/
-
-      - name: Tạo project Cloudflare Pages (nếu chưa có)
-        run: |
-          if ! npx --yes wrangler@4 pages project list | grep -qw "$PROJECT_NAME"; then
-            npx --yes wrangler@4 pages project create "$PROJECT_NAME" --production-branch=main
-          fi
 
       - name: Deploy
         env:
