@@ -63,7 +63,7 @@ svg { display: inline-block; vertical-align: middle; }
 .header-inner { display: flex; align-items: center; height: 100%; }
 
 .logo { flex: 0 0 221px; width: 221px; margin-right: 30px; }
-.logo img { max-height: 70px; padding: 7px 0; width: auto; }
+.logo img { width: auto; height: 76px; max-width: 100%; margin: 0 auto; object-fit: contain; }
 
 .header-block { flex: 1; display: flex; align-items: center; }
 .header-block .col-search { flex: 0 0 72%; max-width: 72%; padding: 0 9.8px; }
@@ -1125,7 +1125,7 @@ section[id] { scroll-margin-top: 50px; }
     margin: 0;
     transform: translateX(-50%);
   }
-  .logo img { margin: 0 auto; max-height: 56px; }
+  .logo img { height: 62px; }
   .header-bottom-inner { display: block; padding-top: 5px; padding-bottom: 5px; }
   .header-bottom .search-form input[type=search] { border-color: #fff; }
 
