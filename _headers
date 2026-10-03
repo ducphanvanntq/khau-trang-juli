@@ -2,3 +2,7 @@
 # (mỗi lần deploy nhánh / pull request có URL riêng dạng <ma>.khau-trang-juli-duc-khoi.pages.dev)
 https://:version.:project.pages.dev/*
   X-Robots-Tag: noindex
+
+# Tên miền chính là juliduckhoi.com: không index bản khau-trang-juli-duc-khoi.pages.dev để tránh trùng nội dung
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex
